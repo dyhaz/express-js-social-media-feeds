@@ -1,0 +1,31 @@
+type Feed {
+  id: ID!
+  title: String
+  content: String!
+  user_id: ID!
+  active: Boolean!
+  image: String
+  comments: [String]
+  likes: [ID]
+  created_at: String!
+  updated_at: String!
+}
+
+input FeedInput {
+  title: String
+  content: String!
+  user_id: ID!
+  active: Boolean!
+  image: String
+}
+
+type Query {
+  feeds: [Feed!]!
+  feed(id: ID!): Feed
+}
+
+type Mutation {
+  createFeed(input: FeedInput!): Feed!
+  updateFeed(id: ID!, input: FeedInput!): Feed!
+  deleteFeed(id: ID!): Feed!
+}
