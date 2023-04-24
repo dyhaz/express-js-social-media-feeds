@@ -22,3 +22,5 @@ coverage/
 *.class
 .DS_Store
 Thumbs.db
+
+knexfile.js
