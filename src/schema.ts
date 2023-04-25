@@ -1,15 +1,16 @@
 import { gql } from 'apollo-server-express';
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
 const resolvers = {
     Query: {
-        hello: () => 'Hello World!'
+        feeds: async () => {
+            try {
+                const feeds = await db('social_feeds').select('*');
+                return feeds;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        }
     }
 };
 
-export { typeDefs, resolvers };
+export { resolvers };

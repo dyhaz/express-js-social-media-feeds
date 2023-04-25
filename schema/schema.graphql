@@ -2,11 +2,11 @@ type Feed {
   id: ID!
   title: String
   content: String!
-  user_id: ID!
+  user_id: ID
   active: Boolean!
   image: String
   comments: [String]
-  likes: [ID]
+  likes: [String]
   created_at: String!
   updated_at: String!
 }
@@ -14,7 +14,7 @@ type Feed {
 input FeedInput {
   title: String
   content: String!
-  user_id: ID!
+  user_id: ID
   active: Boolean!
   image: String
 }
